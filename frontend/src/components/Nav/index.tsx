@@ -13,6 +13,30 @@ export const Nav = () => {
               Home
             </Link>
           </li>
+          <li className="nav-item mx-3">
+            <Link
+              to="/filmes"
+              className="nav-link text-white"
+            >
+              Filmes
+            </Link>
+          </li>
+          <li className="nav-item mx-3">
+            <Link
+              to="/salas"
+              className="nav-link text-white"
+            >
+              Salas
+            </Link>
+          </li>
+          <li className="nav-item mx-3">
+            <Link
+              to="/sessoes"
+              className="nav-link text-white"
+            >
+              Sessoes
+            </Link>
+          </li>
         </ul>
       </div>
     </>

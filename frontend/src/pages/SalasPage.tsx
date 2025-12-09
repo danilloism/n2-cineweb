@@ -5,6 +5,7 @@ import { salaService } from '../services/api.service';
 import { useQuery } from '@tanstack/react-query';
 import { TopoCadastro } from '../components/common/TopoCadastro';
 import { CardDeletavel } from '../components/common/CardDeletavel';
+import { AlertaSucesso } from '../components/common/AlertaSucesso';
 
 export const SalasPage = () => {
   const [showForm, setShowForm] = useState(false);
@@ -83,17 +84,10 @@ export const SalasPage = () => {
       />
 
       {successMessage && (
-        <div
-          className="alert alert-success alert-dismissible fade show"
-          role="alert"
-        >
-          {successMessage}
-          <button
-            type="button"
-            className="btn-close"
-            onClick={() => setSuccessMessage('')}
-          ></button>
-        </div>
+        <AlertaSucesso
+          msg={successMessage}
+          onCloseClick={() => setSuccessMessage('')}
+        />
       )}
 
       {showForm && (

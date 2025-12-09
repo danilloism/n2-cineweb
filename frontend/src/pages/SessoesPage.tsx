@@ -10,6 +10,7 @@ import {
 } from '../services/api.service';
 import { useQuery } from '@tanstack/react-query';
 import { TopoCadastro } from '../components/common/TopoCadastro';
+import { AlertaSucesso } from '../components/common/AlertaSucesso';
 
 export const SessoesPage = () => {
   const [showForm, setShowForm] = useState(false);
@@ -167,17 +168,10 @@ export const SessoesPage = () => {
       />
 
       {successMessage && (
-        <div
-          className="alert alert-success alert-dismissible fade show"
-          role="alert"
-        >
-          {successMessage}
-          <button
-            type="button"
-            className="btn-close"
-            onClick={() => setSuccessMessage('')}
-          ></button>
-        </div>
+        <AlertaSucesso
+          msg={successMessage}
+          onCloseClick={() => setSuccessMessage('')}
+        />
       )}
 
       {showForm && (

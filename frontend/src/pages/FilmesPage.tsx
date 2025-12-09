@@ -11,6 +11,7 @@ import { TopoCadastro } from '../components/common/TopoCadastro';
 import { CardDeletavel } from '../components/common/CardDeletavel';
 import { Input } from '../components/common/Input';
 import { Button } from '../components/common/Button';
+import { AlertaSucesso } from '../components/common/AlertaSucesso';
 
 export const FilmesPage = () => {
   const [showForm, setShowForm] = useState(false);
@@ -125,17 +126,10 @@ export const FilmesPage = () => {
       />
 
       {successMessage && (
-        <div
-          className="alert alert-success alert-dismissible fade show"
-          role="alert"
-        >
-          {successMessage}
-          <Button
-            type="button"
-            variant="close"
-            onClick={() => setSuccessMessage('')}
-          />
-        </div>
+        <AlertaSucesso
+          msg={successMessage}
+          onCloseClick={() => setSuccessMessage('')}
+        />
       )}
 
       {showForm && (

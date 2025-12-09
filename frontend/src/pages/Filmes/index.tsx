@@ -7,6 +7,7 @@ import {
 } from '../../models/filme.model';
 import { filmeService } from '../../services/api.service';
 import { useQuery } from '@tanstack/react-query';
+import { TopoCadastro } from '../../components/common/TopoCadastro';
 
 export const Filmes = () => {
   const [showForm, setShowForm] = useState(false);
@@ -108,28 +109,17 @@ export const Filmes = () => {
       ? new Date(filme.dataFinalExibicao).toLocaleDateString('pt-BR')
       : 'indefinido';
 
-    return `De ${periodoInicial} a ${periodoFinal}`;
+    return `De ${periodoInicial} à ${periodoFinal}`;
   };
 
   return (
     <div className="container-fluid py-4">
-      <div className="row mb-4">
-        <div className="col">
-          <h1 className="mb-3">
-            <i className="bi bi-film me-2"></i>
-            Filmes
-          </h1>
-        </div>
-        <div className="col-auto">
-          <button
-            className="btn btn-primary"
-            onClick={() => setShowForm(!showForm)}
-          >
-            <i className="bi bi-plus-circle me-2"></i>
-            Novo Filme
-          </button>
-        </div>
-      </div>
+      <TopoCadastro
+        titulo="Filmes"
+        tituloBotaoCadastro="Novo Filme"
+        codigoIcone="bi-film"
+        onCadastrarClick={() => setShowForm(!showForm)}
+      />
 
       {successMessage && (
         <div

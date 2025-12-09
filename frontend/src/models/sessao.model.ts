@@ -3,9 +3,11 @@ import { z } from 'zod';
 export const SessaoSchema = z
   .object({
     id: z.number().optional(),
-    filmeId: z.number().min(1, 'Filme é obrigatório'),
-    salaId: z.number().min(1, 'Sala é obrigatória'),
+    filmeId: z.string().min(1, 'Filme é obrigatório'),
+    salaId: z.string().min(1, 'Sala é obrigatória'),
     horarioExibicao: z.date(),
+    tituloFilme: z.string().optional(),
+    numeroSala: z.number().optional(),
   })
   .refine(
     sessao => {

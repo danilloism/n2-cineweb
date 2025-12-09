@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import { Nav } from './components/Nav';
+import { Nav } from './components/common/Nav';
 import { AppRoutes } from './routes';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 

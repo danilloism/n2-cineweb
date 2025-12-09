@@ -105,7 +105,7 @@ export const Sessoes = () => {
     }
   };
 
-  const handleDelete = async (id: number | undefined) => {
+  const handleDelete = async (id: string | undefined) => {
     if (id && window.confirm('Tem certeza que deseja deletar esta sessão?')) {
       try {
         await sessaoService.delete(id);

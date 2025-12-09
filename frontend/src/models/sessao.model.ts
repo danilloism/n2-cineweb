@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 export const SessaoSchema = z
   .object({
-    id: z.number().optional(),
+    id: z.string().optional(),
     filmeId: z.string().min(1, 'Filme é obrigatório'),
     salaId: z.string().min(1, 'Sala é obrigatória'),
     horarioExibicao: z.date(),

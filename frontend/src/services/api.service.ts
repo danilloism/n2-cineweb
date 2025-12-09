@@ -21,7 +21,7 @@ export const filmeService = {
     return response.data;
   },
 
-  delete: async (id: number): Promise<void> => {
+  delete: async (id: string): Promise<void> => {
     await api.delete(`/filmes/${id}`);
   },
 };
@@ -37,7 +37,7 @@ export const salaService = {
     return response.data;
   },
 
-  delete: async (id: number): Promise<void> => {
+  delete: async (id: string): Promise<void> => {
     await api.delete(`/salas/${id}`);
   },
 };
@@ -53,7 +53,7 @@ export const sessaoService = {
     return response.data;
   },
 
-  delete: async (id: number): Promise<void> => {
+  delete: async (id: string): Promise<void> => {
     await api.delete(`/sessoes/${id}`);
   },
 };
@@ -69,7 +69,7 @@ export const ingressoService = {
     return response.data;
   },
 
-  delete: async (id: number): Promise<void> => {
+  delete: async (id: string): Promise<void> => {
     await api.delete(`/ingressos/${id}`);
   },
 };

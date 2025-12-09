@@ -89,7 +89,7 @@ export const Filmes = () => {
     }
   };
 
-  const handleDelete = async (id: number | undefined) => {
+  const handleDelete = async (id: string | undefined) => {
     if (id && window.confirm('Tem certeza que deseja deletar este filme?')) {
       try {
         await filmeService.delete(id);

@@ -10,7 +10,7 @@ export enum GeneroFilme {
 }
 
 export const FilmeSchema = z.object({
-  id: z.number().optional(),
+  id: z.string().optional(),
   titulo: z.string().min(1, 'Título é obrigatório'),
   sinopse: z.string().min(10, 'Sinopse deve ter no mínimo 10 caracteres'),
   classificacao: z.string().min(1, 'Classificação é obrigatória'),

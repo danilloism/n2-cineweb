@@ -7,11 +7,11 @@ import {
 } from '../models/filme.model';
 import { filmeService } from '../services/api.service';
 import { useQuery } from '@tanstack/react-query';
-import { TopoCadastro } from '../components/common/TopoCadastro';
-import { CardDeletavel } from '../components/common/CardDeletavel';
-import { Input } from '../components/common/Input';
-import { Button } from '../components/common/Button';
-import { AlertaSucesso } from '../components/common/AlertaSucesso';
+import { TopoCadastro } from '../components/TopoCadastro';
+import { CardDeletavel } from '../components/CardDeletavel';
+import { Input } from '../components/Input';
+import { Button } from '../components/Button';
+import { AlertaSucesso } from '../components/AlertaSucesso';
 
 export const FilmesPage = () => {
   const [showForm, setShowForm] = useState(false);

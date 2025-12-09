@@ -3,10 +3,10 @@ import { ZodError } from 'zod';
 import { SalaSchema } from '../models/sala.model';
 import { salaService } from '../services/api.service';
 import { useQuery } from '@tanstack/react-query';
-import { TopoCadastro } from '../components/common/TopoCadastro';
-import { CardDeletavel } from '../components/common/CardDeletavel';
-import { AlertaSucesso } from '../components/common/AlertaSucesso';
-import { Button } from '../components/common/Button';
+import { TopoCadastro } from '../components/TopoCadastro';
+import { CardDeletavel } from '../components/CardDeletavel';
+import { AlertaSucesso } from '../components/AlertaSucesso';
+import { Button } from '../components/Button';
 
 export const SalasPage = () => {
   const [showForm, setShowForm] = useState(false);

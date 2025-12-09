@@ -9,9 +9,9 @@ import {
   ingressoService,
 } from '../services/api.service';
 import { useQuery } from '@tanstack/react-query';
-import { TopoCadastro } from '../components/common/TopoCadastro';
-import { AlertaSucesso } from '../components/common/AlertaSucesso';
-import { Button } from '../components/common/Button';
+import { TopoCadastro } from '../components/TopoCadastro';
+import { AlertaSucesso } from '../components/AlertaSucesso';
+import { Button } from '../components/Button';
 
 export const SessoesPage = () => {
   const [showForm, setShowForm] = useState(false);
@@ -77,7 +77,6 @@ export const SessoesPage = () => {
     e.preventDefault();
     setErrors({});
 
-    console.log(formData);
     try {
       const novaSessao = SessaoSchema.parse({
         filmeId: formData.filmeId,

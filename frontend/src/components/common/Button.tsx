@@ -1,6 +1,8 @@
+import type { FunctionComponent, PropsWithChildren } from 'react';
+
 interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
-  label: string;
+  className?: string;
   variant?:
     | 'primary'
     | 'secondary'
@@ -10,25 +12,26 @@ interface ButtonProps {
     | 'info'
     | 'light'
     | 'dark';
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   disabled?: boolean;
 }
 
-export const Button = ({
-  label,
+export const Button: FunctionComponent<PropsWithChildren<ButtonProps>> = ({
   type = 'button',
   variant = 'primary',
   onClick,
   disabled = false,
-}: ButtonProps) => {
+  children,
+  className = '',
+}) => {
   return (
     <button
-      className={`btn btn-${variant}`}
+      className={`btn btn-${variant} ${className}`}
       onClick={onClick}
       type={type}
       disabled={disabled}
     >
-      {label}
+      {children}
     </button>
   );
 };

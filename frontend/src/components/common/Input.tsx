@@ -1,10 +1,12 @@
 interface InputProps {
   id?: string;
   label?: string;
-  type: 'text' | 'number' | 'email' | 'password' | 'date';
+  type?: 'text' | 'number' | 'email' | 'password' | 'date';
   placeholder?: string;
   value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
+  name?: string | undefined;
+  onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
 export const Input = ({
@@ -14,6 +16,8 @@ export const Input = ({
   placeholder,
   value,
   onChange,
+  className = '',
+  name,
 }: InputProps) => {
   return (
     <>
@@ -26,10 +30,12 @@ export const Input = ({
         </label>
       )}
       <input
-        className="form-control"
+        id={id}
+        className={`form-control ${className}`}
         type={type}
         placeholder={placeholder}
         value={value}
+        name={name}
         onChange={onChange}
       />
     </>

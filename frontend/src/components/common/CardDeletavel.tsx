@@ -1,4 +1,5 @@
 import type { FunctionComponent, PropsWithChildren } from 'react';
+import { Button } from './Button';
 
 interface CardDeletavelProps {
   onDelete: React.MouseEventHandler<HTMLButtonElement> | undefined;
@@ -16,13 +17,14 @@ export const CardDeletavel: FunctionComponent<
           {children}
         </div>
         <div className="card-footer bg-transparent">
-          <button
-            className="btn btn-sm btn-danger w-100"
+          <Button
+            variant="danger"
+            className="btn-sm w-100"
             onClick={onDelete}
           >
             <i className="bi bi-trash me-2"></i>
             Deletar
-          </button>
+          </Button>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ import { filmeService } from '../services/api.service';
 import { useQuery } from '@tanstack/react-query';
 import { TopoCadastro } from '../components/common/TopoCadastro';
 import { CardDeletavel } from '../components/common/CardDeletavel';
+import { Input } from '../components/common/Input';
 
 export const FilmesPage = () => {
   const [showForm, setShowForm] = useState(false);
@@ -142,15 +143,13 @@ export const FilmesPage = () => {
             <form onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col-md-6 mb-3">
-                  <label className="form-label">Título *</label>
-                  <input
-                    type="text"
-                    className={`form-control ${
-                      errors.titulo ? 'is-invalid' : ''
-                    }`}
-                    name="titulo"
+                  <Input
+                    label="Título *"
                     value={formData.titulo}
+                    type="text"
                     onChange={handleChange}
+                    name="titulo"
+                    className={errors.titulo ? 'is-invalid' : ''}
                   />
                   {errors.titulo && (
                     <div className="invalid-feedback d-block">
@@ -187,15 +186,13 @@ export const FilmesPage = () => {
 
               <div className="row">
                 <div className="col-md-6 mb-3">
-                  <label className="form-label">Duração (minutos) *</label>
-                  <input
-                    type="number"
-                    className={`form-control ${
-                      errors.duracao ? 'is-invalid' : ''
-                    }`}
-                    name="duracao"
+                  <Input
+                    label="Duração (minutos) *"
                     value={formData.duracao}
+                    type="number"
                     onChange={handleChange}
+                    name="duracao"
+                    className={errors.duracao ? 'is-invalid' : ''}
                   />
                   {errors.duracao && (
                     <div className="invalid-feedback d-block">
@@ -252,15 +249,13 @@ export const FilmesPage = () => {
 
               <div className="row">
                 <div className="col-md-6 mb-3">
-                  <label className="form-label">Data Inicial de Exibição</label>
-                  <input
-                    type="date"
-                    className={`form-control ${
-                      errors.dataInicialExibicao ? 'is-invalid' : ''
-                    }`}
-                    name="dataInicialExibicao"
+                  <Input
+                    label="Data Inicial de Exibição"
                     value={formData.dataInicialExibicao}
+                    type="date"
                     onChange={handleChange}
+                    name="dataInicialExibicao"
+                    className={errors.dataInicialExibicao ? 'is-invalid' : ''}
                   />
                   {errors.dataInicialExibicao && (
                     <div className="invalid-feedback d-block">
@@ -270,15 +265,13 @@ export const FilmesPage = () => {
                 </div>
 
                 <div className="col-md-6 mb-3">
-                  <label className="form-label">Data Final de Exibição</label>
-                  <input
-                    type="date"
-                    className={`form-control ${
-                      errors.dataFinalExibicao ? 'is-invalid' : ''
-                    }`}
-                    name="dataFinalExibicao"
+                  <Input
+                    label="Data Final de Exibição"
                     value={formData.dataFinalExibicao}
+                    type="date"
                     onChange={handleChange}
+                    name="dataFinalExibicao"
+                    className={errors.dataFinalExibicao ? 'is-invalid' : ''}
                   />
                   {errors.dataFinalExibicao && (
                     <div className="invalid-feedback d-block">

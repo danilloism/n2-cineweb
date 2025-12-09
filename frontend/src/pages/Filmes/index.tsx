@@ -8,6 +8,7 @@ import {
 import { filmeService } from '../../services/api.service';
 import { useQuery } from '@tanstack/react-query';
 import { TopoCadastro } from '../../components/common/TopoCadastro';
+import { CardDeletavel } from '../../components/common/CardDeletavel';
 
 export const Filmes = () => {
   const [showForm, setShowForm] = useState(false);
@@ -324,40 +325,23 @@ export const Filmes = () => {
             </div>
           ) : (
             filmes.map(filme => (
-              <div
-                key={filme.id}
-                className="col-md-6 col-lg-4 mb-4"
+              <CardDeletavel
+                key={`filme-${filme.id}`}
+                titulo={filme.titulo}
+                onDelete={() => handleDelete(filme.id)}
               >
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">
-                    <h5 className="card-title">{filme.titulo}</h5>
-                    <p className="card-text text-muted small">
-                      {filme.sinopse}
-                    </p>
-                    <div className="mb-2">
-                      <span className="badge bg-info me-2">{filme.genero}</span>
-                      <span className="badge bg-secondary me-2">
-                        {filme.classificacao}
-                      </span>
-                      <span className="badge bg-primary">
-                        {filme.duracao} min
-                      </span>
-                    </div>
-                    <small className="text-muted d-block mb-2">
-                      {formatPeriodo(filme)}
-                    </small>
-                  </div>
-                  <div className="card-footer bg-transparent">
-                    <button
-                      className="btn btn-sm btn-danger w-100"
-                      onClick={() => handleDelete(filme.id)}
-                    >
-                      <i className="bi bi-trash me-2"></i>
-                      Deletar
-                    </button>
-                  </div>
+                <p className="card-text text-muted small">{filme.sinopse}</p>
+                <div className="mb-2">
+                  <span className="badge bg-info me-2">{filme.genero}</span>
+                  <span className="badge bg-secondary me-2">
+                    {filme.classificacao}
+                  </span>
+                  <span className="badge bg-primary">{filme.duracao} min</span>
                 </div>
-              </div>
+                <small className="text-muted d-block mb-2">
+                  {formatPeriodo(filme)}
+                </small>
+              </CardDeletavel>
             ))
           )}
         </div>

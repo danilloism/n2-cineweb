@@ -4,6 +4,7 @@ import { SalaSchema } from '../../models/sala.model';
 import { salaService } from '../../services/api.service';
 import { useQuery } from '@tanstack/react-query';
 import { TopoCadastro } from '../../components/common/TopoCadastro';
+import { CardDeletavel } from '../../components/common/CardDeletavel';
 
 export const Salas = () => {
   const [showForm, setShowForm] = useState(false);
@@ -175,28 +176,15 @@ export const Salas = () => {
             </div>
           ) : (
             salas?.map(sala => (
-              <div
-                key={sala.id}
-                className="col-md-6 col-lg-4 mb-4"
+              <CardDeletavel
+                key={`sala-${sala.id}`}
+                titulo={`Sala ${sala.numero}`}
+                onDelete={() => handleDelete(sala.id)}
               >
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">
-                    <h5 className="card-title">Sala {sala.numero}</h5>
-                    <p className="card-text">
-                      <strong>Capacidade:</strong> {sala.capacidade} lugares
-                    </p>
-                  </div>
-                  <div className="card-footer bg-transparent">
-                    <button
-                      className="btn btn-sm btn-danger w-100"
-                      onClick={() => handleDelete(sala.id)}
-                    >
-                      <i className="bi bi-trash me-2"></i>
-                      Deletar
-                    </button>
-                  </div>
-                </div>
-              </div>
+                <p className="card-text">
+                  <strong>Capacidade:</strong> {sala.capacidade} lugares
+                </p>
+              </CardDeletavel>
             ))
           )}
         </div>

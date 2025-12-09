@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { ZodError } from 'zod';
-import { SalaSchema } from '../../models/sala.model';
-import { salaService } from '../../services/api.service';
+import { SalaSchema } from '../models/sala.model';
+import { salaService } from '../services/api.service';
 import { useQuery } from '@tanstack/react-query';
-import { TopoCadastro } from '../../components/common/TopoCadastro';
-import { CardDeletavel } from '../../components/common/CardDeletavel';
+import { TopoCadastro } from '../components/common/TopoCadastro';
+import { CardDeletavel } from '../components/common/CardDeletavel';
 
-export const Salas = () => {
+export const SalasPage = () => {
   const [showForm, setShowForm] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [successMessage, setSuccessMessage] = useState('');

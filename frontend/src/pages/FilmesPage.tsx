@@ -4,13 +4,13 @@ import {
   type CricaoFilme,
   FilmeSchema,
   GeneroFilme,
-} from '../../models/filme.model';
-import { filmeService } from '../../services/api.service';
+} from '../models/filme.model';
+import { filmeService } from '../services/api.service';
 import { useQuery } from '@tanstack/react-query';
-import { TopoCadastro } from '../../components/common/TopoCadastro';
-import { CardDeletavel } from '../../components/common/CardDeletavel';
+import { TopoCadastro } from '../components/common/TopoCadastro';
+import { CardDeletavel } from '../components/common/CardDeletavel';
 
-export const Filmes = () => {
+export const FilmesPage = () => {
   const [showForm, setShowForm] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [successMessage, setSuccessMessage] = useState('');

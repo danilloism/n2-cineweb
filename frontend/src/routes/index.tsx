@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import { Home } from '../pages/Home';
-import { Filmes } from '../pages/Filmes';
-import { Salas } from '../pages/Salas';
-import { Sessoes } from '../pages/Sessoes';
+import { HomePage } from '../pages/HomePage';
+import { FilmesPage } from '../pages/FilmesPage';
+import { SalasPage } from '../pages/SalasPage';
+import { SessoesPage } from '../pages/SessoesPage';
 
 export const AppRoutes = () => {
   return (
@@ -10,19 +10,19 @@ export const AppRoutes = () => {
       <Routes>
         <Route
           path="/"
-          element={<Home />}
+          element={<HomePage />}
         />
         <Route
           path="/filmes"
-          element={<Filmes />}
+          element={<FilmesPage />}
         />
         <Route
           path="/salas"
-          element={<Salas />}
+          element={<SalasPage />}
         />
         <Route
           path="/sessoes"
-          element={<Sessoes />}
+          element={<SessoesPage />}
         />
       </Routes>
     </>

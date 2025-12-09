@@ -1,4 +1,4 @@
-export const Home = () => {
+export const HomePage = () => {
   return (
     <div className="container-fluid">
       <div

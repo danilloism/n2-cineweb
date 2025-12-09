@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { ZodError } from 'zod';
-import { type Ingresso, IngressoSchema } from '../../models/ingresso.model';
-import { type Sessao, SessaoSchema } from '../../models/sessao.model';
+import { type Ingresso, IngressoSchema } from '../models/ingresso.model';
+import { type Sessao, SessaoSchema } from '../models/sessao.model';
 import {
   sessaoService,
   filmeService,
   salaService,
   ingressoService,
-} from '../../services/api.service';
+} from '../services/api.service';
 import { useQuery } from '@tanstack/react-query';
-import { TopoCadastro } from '../../components/common/TopoCadastro';
+import { TopoCadastro } from '../components/common/TopoCadastro';
 
-export const Sessoes = () => {
+export const SessoesPage = () => {
   const [showForm, setShowForm] = useState(false);
   const [showIngressoModal, setShowIngressoModal] = useState(false);
   const [sessaoSelecionada, setSessaoSelecionada] = useState<Sessao | null>(

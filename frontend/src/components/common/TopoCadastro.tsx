@@ -1,3 +1,5 @@
+import { Button } from './Button';
+
 interface TopoCadastroProps {
   titulo: string;
   botaoCadastroVisivel?: boolean;
@@ -23,13 +25,13 @@ export const TopoCadastro = ({
       </div>
       {botaoCadastroVisivel && (
         <div className="col-auto">
-          <button
-            className="btn btn-primary"
+          <Button
+            variant="primary"
             onClick={onCadastrarClick}
           >
             <i className="bi bi-plus-circle me-2"></i>
             {tituloBotaoCadastro}
-          </button>
+          </Button>
         </div>
       )}
     </div>

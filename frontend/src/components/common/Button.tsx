@@ -11,7 +11,8 @@ interface ButtonProps {
     | 'warning'
     | 'info'
     | 'light'
-    | 'dark';
+    | 'dark'
+    | 'close';
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   disabled?: boolean;
 }

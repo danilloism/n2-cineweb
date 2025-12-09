@@ -6,6 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import { TopoCadastro } from '../components/common/TopoCadastro';
 import { CardDeletavel } from '../components/common/CardDeletavel';
 import { AlertaSucesso } from '../components/common/AlertaSucesso';
+import { Button } from '../components/common/Button';
 
 export const SalasPage = () => {
   const [showForm, setShowForm] = useState(false);
@@ -133,21 +134,22 @@ export const SalasPage = () => {
               </div>
 
               <div className="d-flex gap-2">
-                <button
+                <Button
                   type="submit"
-                  className="btn btn-success"
+                  variant="success"
                 >
                   <i className="bi bi-check-circle me-2"></i>
                   Salvar
-                </button>
-                <button
+                </Button>
+
+                <Button
                   type="button"
-                  className="btn btn-secondary"
+                  variant="secondary"
                   onClick={() => setShowForm(false)}
                 >
-                  <i className="bi bi-x-circle me-2"></i>
+                  <i className="bi bi-check-circle me-2"></i>
                   Cancelar
-                </button>
+                </Button>
               </div>
             </form>
           </div>

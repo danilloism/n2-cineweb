@@ -11,6 +11,7 @@ import {
 import { useQuery } from '@tanstack/react-query';
 import { TopoCadastro } from '../components/common/TopoCadastro';
 import { AlertaSucesso } from '../components/common/AlertaSucesso';
+import { Button } from '../components/common/Button';
 
 export const SessoesPage = () => {
   const [showForm, setShowForm] = useState(false);
@@ -254,21 +255,22 @@ export const SessoesPage = () => {
               </div>
 
               <div className="d-flex gap-2">
-                <button
+                <Button
                   type="submit"
-                  className="btn btn-success"
+                  variant="success"
                 >
                   <i className="bi bi-check-circle me-2"></i>
                   Agendar
-                </button>
-                <button
+                </Button>
+
+                <Button
                   type="button"
-                  className="btn btn-secondary"
+                  variant="secondary"
                   onClick={() => setShowForm(false)}
                 >
-                  <i className="bi bi-x-circle me-2"></i>
+                  <i className="bi bi-check-circle me-2"></i>
                   Cancelar
-                </button>
+                </Button>
               </div>
             </form>
           </div>
@@ -322,19 +324,22 @@ export const SessoesPage = () => {
                       )}
                     </td>
                     <td className="text-center">
-                      <button
-                        className="btn btn-sm btn-info me-2"
+                      <Button
+                        variant="info"
+                        className="btn-sm me-2"
                         onClick={() => handleVenderIngresso(sessao)}
                       >
                         <i className="bi bi-ticket me-1"></i>
                         Vender Ingresso
-                      </button>
-                      <button
-                        className="btn btn-sm btn-danger"
+                      </Button>
+
+                      <Button
+                        variant="danger"
+                        className="btn-sm"
                         onClick={() => handleDelete(sessao.id)}
                       >
                         <i className="bi bi-trash"></i>
-                      </button>
+                      </Button>
                     </td>
                   </tr>
                 ))
@@ -353,11 +358,11 @@ export const SessoesPage = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Vender Ingresso</h5>
-                <button
+                <Button
                   type="button"
-                  className="btn-close"
+                  variant="close"
                   onClick={() => setShowIngressoModal(false)}
-                ></button>
+                />
               </div>
               <div className="modal-body">
                 <p className="mb-3">
@@ -407,20 +412,21 @@ export const SessoesPage = () => {
                 </div>
               </div>
               <div className="modal-footer">
-                <button
+                <Button
                   type="button"
-                  className="btn btn-secondary"
+                  variant="secondary"
                   onClick={() => setShowIngressoModal(false)}
                 >
                   Cancelar
-                </button>
-                <button
+                </Button>
+
+                <Button
                   type="button"
-                  className="btn btn-success"
+                  variant="success"
                   onClick={handleConfirmarIngresso}
                 >
                   Confirmar Venda
-                </button>
+                </Button>
               </div>
             </div>
           </div>
